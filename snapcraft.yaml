@@ -1,4 +1,4 @@
-name: hockeyeth
+name: hockeypuck
 version: git
 summary: OpenPGP Public Keyserver
 description: |
@@ -15,25 +15,25 @@ grade: stable
 
 apps:
   hockeypuck:
-    command: bin/hockeyeth-wrapper
+    command: bin/hockeypuck-wrapper
     daemon: simple
     plugs:
       - network
       - network-bind
   config:
-    command: hockeyeth-config-wrapper
+    command: hockeypuck-config-wrapper
   dump:
-    command: bin/hockeyeth-dump-wrapper
+    command: bin/hockeypuck-dump-wrapper
     plugs:
       - home
       - network
   load:
-    command: bin/hockeyeth-load-wrapper
+    command: bin/hockeypuck-load-wrapper
     plugs:
       - home
       - network
   pbuild:
-    command: bin/hockeyeth-pbuild-wrapper
+    command: bin/hockeypuck-pbuild-wrapper
     plugs:
       - network
 
@@ -52,7 +52,7 @@ parts:
 
   wrappers:
     plugin: dump
-    source: src/hockeyeth/server/snap
+    source: src/hockeypuck/server/snap
     organize:
       "*-wrapper": bin/
     stage:

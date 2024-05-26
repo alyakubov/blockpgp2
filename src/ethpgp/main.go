@@ -7,7 +7,8 @@ import (
 	"strings"
 
 	//pghkp "github.com/alyakubov/blockpgp"
-	pghkp "github.com/alyakubov/blockpgp2/hockeyeth/pghkp"
+	// pghkp "github.com/alyakubov/blockpgp2/hockeypuck/pghkp"
+	"github.com/alyakubov/blockpgp2/src/hockeypuck/pghkp"
 )
 
 const HELP_USERADDR string = "User's blockchain address (0x..) should be put into the comment field of the certificate after 'blockchain:' statement, for example 'blockchain:0x023df..'"

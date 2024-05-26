@@ -10,10 +10,10 @@ cleanup() {
 }
 trap cleanup EXIT
 
-docker-compose stop hockeyeth
-docker-compose rm -f hockeyeth
+docker-compose stop hockeypuck
+docker-compose rm -f hockeypuck
 docker-compose run --rm \
-    --volume "${PGP_EXPORT:-/var/cache/hockeyeth}:/hockeypuck/export" \
+    --volume "${PGP_EXPORT:-/var/cache/hockeypuck}:/hockeypuck/export" \
     --entrypoint /bin/bash \
-    hockeyeth -xe -c \
-		'mkdir -p /hockeyeth/export/dump; find /hockeyeth/export/dump -type f -exec rm {} +; /hockeyeth/bin/hockeyeth-dump -config /hockeyeth/etc/hockeyeth.conf -path /hockeyeth/export/dump'
+    hockeypuck -xe -c \
+		'mkdir -p /hockeypuck/export/dump; find /hockeypuck/export/dump -type f -exec rm {} +; /hockeypuck/bin/hockeypuck-dump -config /hockeypuck/etc/hockeypuck.conf -path /hockeypuck/export/dump'

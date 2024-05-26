@@ -14,7 +14,7 @@ RUN make build
 
 
 FROM debian:buster-slim
-RUN mkdir -p /hockeyeth/bin /hockeyeth/lib /hockeyeth/etc /hockeyeth/data
+RUN mkdir -p /hockeypuck/bin /hockeypuck/lib /hockeypuck/etc /hockeypuck/data
 COPY --from=builder /hockeypuck/bin /hockeypuck/bin
 COPY contrib/templates /hockeypuck/lib/templates
 COPY contrib/webroot /hockeypuck/lib/www

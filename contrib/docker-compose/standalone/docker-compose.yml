@@ -12,15 +12,15 @@ services:
     - FINGERPRINT
     - POSTGRES_USER
     - POSTGRES_PASSWORD
-    - HKP_CONF_DIR=/hockeyeth/etc
+    - HKP_CONF_DIR=/hockeypuck/etc
     depends_on:
     - postgres
     volumes:
-    - ./hockeyeth-entrypoint.sh:/usr/local/bin/hockeyeth-entrypoint.sh
-    - ./hockeyeth/etc:/hockeyeth/etc
-    - hkp_data:/hockeyeth/data
-    - pgp_import:/hockeyeth/import
-    entrypoint: /usr/local/bin/hockeyeth-entrypoint.sh
+    - ./hockeypuck-entrypoint.sh:/usr/local/bin/hockeypuck-entrypoint.sh
+    - ./hockeypuck/etc:/hockeypuck/etc
+    - hkp_data:/hockeypuck/data
+    - pgp_import:/hockeypuck/import
+    entrypoint: /usr/local/bin/hockeypuck-entrypoint.sh
     logging:
       options:
         max-size: "10m"
@@ -67,7 +67,7 @@ services:
     - CLUSTER_FQDNS
     - PROMETHEUS_HOST_PORT=prometheus:9090
     - CERTBOT_HOST_PORT=certbot:80
-    - KEYSERVER_HOST_PORT=hockeyeth:11371
+    - KEYSERVER_HOST_PORT=hockeypuck:11371
     - HAP_DHPARAM_FILE=/etc/letsencrypt/ssl-dhparams.pem
     - HAP_CONF_DIR=/usr/local/etc/haproxy
     - HAP_CACHE_DIR=/var/cache/haproxy

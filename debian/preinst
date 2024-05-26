@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-# checking hockeyeth account
+# checking hockeypuck account
 
 uid=`getent passwd hockeyeth | cut -d ":" -f 3`
 home=`getent passwd hockeyeth | cut -d ":" -f 6`

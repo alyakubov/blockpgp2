@@ -43,7 +43,7 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:9100']
 
-  - job_name: hockeyeth
+  - job_name: hockeypuck
     static_configs:
     - targets: ['localhost:9626']
 
