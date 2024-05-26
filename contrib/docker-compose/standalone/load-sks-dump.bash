@@ -3,5 +3,5 @@
 set -eu
 
 docker-compose run --rm --entrypoint \
-	/bin/bash hockeypuck -x -c \
-		'/hockeypuck/bin/hockeypuck-load -config /hockeypuck/etc/hockeypuck.conf /hockeypuck/import/dump/*.pgp'
+	/bin/bash hockeyeth -x -c \
+		'/hockeyeth/bin/hockeyeth-load -config /hockeyeth/etc/hockeyeth.conf /hockeyeth/import/dump/*.pgp'

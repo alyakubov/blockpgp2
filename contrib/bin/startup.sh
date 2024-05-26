@@ -1,9 +1,9 @@
 #!/bin/sh
 # Ensure that some data has been imported before running the server
 
-hkp=/hockeypuck
+hkp=/hockeyeth
 bin=$hkp/bin
-config=$hkp/etc/hockeypuck.conf
+config=$hkp/etc/hockeyeth.conf
 
 data=$hkp/data
 ptree=$data/ptree
@@ -52,7 +52,7 @@ EOF
   else
     mkdir -p $ptree
     echo "Importing PGP files from keydump..."
-    $bin/hockeypuck-load -config $config $keydump/\*.pgp || exit 1
+    $bin/hockeyeth-load -config $config $keydump/\*.pgp || exit 1
     touch $timestamp
   fi
 else
@@ -60,8 +60,8 @@ else
   # This is rare, but here as it is hard to stop the daemon from auto-starting.
   echo "Importing any PGP files newer than the timestamp..."
   find $keydump -name "*.pgp" -newer $timestamp -print0 | \
-    xargs -0r $bin/hockeypuck-load -config $config || exit 1
+    xargs -0r $bin/hockeyeth-load -config $config || exit 1
 fi
 
 echo "Starting hockeypuck daemon..."
-exec $bin/hockeypuck -config $config
+exec $bin/hockeyeth -config $config

@@ -12,3 +12,4 @@ __pycache__
 debian/files
 version-git-commit
 version-release
+/scontract/binout

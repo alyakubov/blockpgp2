@@ -10,9 +10,9 @@ services:
     depends_on:
     - postgres
     volumes:
-    - ./etc:/hockeypuck/etc
-    - ./keydump:/hockeypuck/import/dump
-    - hkp_data:/hockeypuck/data
+    - ./etc:/hockeyeth/etc
+    - ./keydump:/hockeyeth/import/dump
+    - hkp_data:/hockeyeth/data
     logging:
       driver: json-file
       options:

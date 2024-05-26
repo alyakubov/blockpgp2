@@ -3,5 +3,5 @@
 set -eu
 
 docker-compose \
-	run --rm --entrypoint /bin/bash hockeypuck \
-		-x -c '/hockeypuck/bin/hockeypuck-pbuild -config /hockeypuck/etc/hockeypuck.conf'
+	run --rm --entrypoint /bin/bash hockeyeth \
+		-x -c '/hockeyeth/bin/hockeyeth-pbuild -config /hockeyeth/etc/hockeyeth.conf'

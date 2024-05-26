@@ -3,7 +3,7 @@
 HERE=$(cd "$(dirname "$0")"; pwd)
 set -eu
 
-# Script to create or migrate a hockeypuck standalone deployment.
+# Script to create or migrate a hockeyeth standalone deployment.
 
 # This script should not overwrite existing modifications.
 # To regenerate the .env file from scratch you must remove it first.
