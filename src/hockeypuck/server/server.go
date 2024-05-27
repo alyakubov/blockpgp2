@@ -16,11 +16,11 @@ import (
 	"github.com/pkg/errors"
 	"gopkg.in/tomb.v2"
 
-	log "hockeyeth/logrus"
 	"hockeypuck/conflux/recon"
 	"hockeypuck/hkp"
 	"hockeypuck/hkp/sks"
 	"hockeypuck/hkp/storage"
+	log "hockeypuck/logrus"
 	"hockeypuck/metrics"
 	"hockeypuck/openpgp"
 	"hockeypuck/pghkp"
