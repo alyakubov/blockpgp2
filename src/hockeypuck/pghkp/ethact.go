@@ -902,10 +902,25 @@ func GetEthSession(pgpContract interface{}, userAddr common.Address, pswd string
 		return nil, errors.New(fmt.Sprintf("Key File error %v for %v", err, gConfig.KeyDir+keyFile))
 	}
 
-	auth, err := bind.NewTransactor(strings.NewReader(string(key)), pswd)
-	if err != nil {
-		return nil, errors.New(fmt.Sprintf("Failed to create authorized transactor: %v", err))
-	}
+	/*
+		AYAKU_NEW Update of depreciated call to NewTransactor with
+	*/
+	chainID := big.NewInt(1234567)
+	//auth, err := bind.NewTransactor(strings.NewReader(string(key)), pswd)
+	auth, err := bind.NewTransactorWithChainID(strings.NewReader(string(key)), pswd, chainID)
+	// Define the chain ID (e.g., 1 for Ethereum mainnet)
+	// Decrypt the keystore file
+	/*
+		decoded_key, err := keystore.DecryptKey(key, pswd)
+		if err != nil {
+			return nil, fmt.Errorf("failed to decrypt keystore file: %w", err)
+		}
+		auth, err := bind.NewKeyedTransactorWithChainID(decoded_key.PrivateKey, chainID)
+		if err != nil {
+			return nil, errors.New(fmt.Sprintf("Failed to create authorized transactor: %v", err))
+		}
+	*/
+	// !AYAKU_NEW
 
 	callOpts := bind.CallOpts{
 		Pending: true,
